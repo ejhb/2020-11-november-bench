@@ -16,6 +16,10 @@ from sklearn import svm
 engine = create_engine("mysql+pymysql://root@localhost/dataAi")
 df = pd.read_sql_table('cardata',engine)
 
+######### OR 
+
+df = pd.read_csv('../data/carData.csv')
+
 X = df['Year'].values
 y = df['Selling_Price']
 x = np.array(X).reshape(-1,1)
